@@ -2,10 +2,10 @@ version: "3"
 services:
   app:
     image: dwaaan/hrconvert2-docker:latest
+    container_name: hrconvert2
     restart: always
     ports:
-      - 8085:80
+      - 9002:80
     volumes:
       - ./config.php:/var/www/html/HRProprietary/HRConvert2/config.php
-# uncomment the below line to expose temporary upload folder as a volume
-#     - ./files:/home/converter:rw
+      - ./files:/home/converter:rw
